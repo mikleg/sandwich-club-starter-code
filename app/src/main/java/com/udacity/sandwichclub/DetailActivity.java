@@ -69,7 +69,6 @@ public class DetailActivity extends AppCompatActivity {
         mOriginTextView = (TextView) findViewById(R.id.origin_tv);
         mOtherNamesTextView = (TextView) findViewById(R.id.also_known_tv);
         mIngredientsTextView = (TextView) findViewById(R.id.ingredients_tv);
-
         mOriginTextView.append(s.getPlaceOfOrigin());
         mDescriptionTextView.append(s.getDescription());
         for (String name : s.getAlsoKnownAs()) mOtherNamesTextView.append(name + "; ");

@@ -33,10 +33,9 @@ public class JsonUtils {
     {
         int descriptIx = json.indexOf(name)+name.length()+3;
         int comma1 = json.substring(descriptIx).indexOf("\",\"") + descriptIx;
-
         return json.substring(descriptIx, comma1);
     }
-
+    //it returns a list of values of given property
     private static List<String> getValueList(String json, String name)
     {
         int descriptIx = json.indexOf(name)+name.length()+3;
@@ -48,18 +47,13 @@ public class JsonUtils {
 
     public static Sandwich parseSandwichJson(String json)
     {
-        //String json2 = json.replaceAll("\"","");
         String description = getValue(json, "description");
         String place = getValue(json, "placeOfOrigin");
         String mainName = getValue(json, "mainName");
+        String image = getValue(json, "image");
         List<String> otherName = getValueList(json, "alsoKnownAs");
-        //System.out.println(otherName);
         List<String> ingredient = getValueList(json, "ingredients");
-        //System.out.println(ingredient);
 
-       // List<String> alsoKnownAs = Arrays.asList("name1", "name2", "name3");
-        String image = "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Shawarmafood.jpg/800px-Shawarmafood.jpg";
-        //List<String> ingredients = Arrays.asList("ing1", "ing2");
         /*String description ="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis eu lectus posuere, facilisis lectus vitae, viverra mi. Ut lacinia nec ligula et varius. Ut sed nunc et lacus vestibulum finibus. Duis vitae posuere elit. Curabitur consequat erat non nibh volutpat, eu consectetur augue gravida. Curabitur at accumsan dolor, eu ultricies lorem. Maecenas varius varius odio nec interdum. Vivamus nibh tellus, varius vel neque quis, mollis tristique velit. Maecenas sit amet nisi id augue pulvinar imperdiet et non nibh. Curabitur fermentum, dui ac pretium maximus, sapien urna fringilla nulla, sit amet laoreet mauris orci eu velit. Aliquam gravida lacus in turpis pretium malesuada. Curabitur ligula est, suscipit aliquam metus vitae, lacinia interdum neque. Integer augue velit, lacinia non rhoncus in, iaculis accumsan lorem. Donec massa enim, rhoncus convallis suscipit quis, pretium sit amet arcu.\n" +
                 "\n" +
                 "Vivamus accumsan facilisis libero. Vivamus blandit malesuada tellus, id porttitor eros ultrices in. Praesent non varius felis. Ut orci nunc, sollicitudin non elit id, eleifend lobortis ligula. Quisque vel gravida metus, sit amet mollis sem. Maecenas ultrices euismod volutpat. Sed vitae sem dolor. Morbi cursus placerat pulvinar.\n" +
